@@ -44,29 +44,24 @@
 #}
 <div class="layout-container">
 
-  {{ include('@tresvuits/includes/header.html.twig') }}
+  <div class="viewport bg-primary pb-12 relative z-10" id="tv-viewport">
 
-  {# {{ page.secondary_menu }} #}
+    {{ include('@tresvuits/includes/header.html.twig') }}
 
-  {# {{ page.breadcrumb }} #}
+    {# {{ page.secondary_menu }} #}
+    {# {{ page.breadcrumb }} #}
+    {# {{ page.highlighted }} #}
+    {# {{ page.help }} #}
 
-  {# {{ page.highlighted }} #}
+    <main role="main" class="px-5">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      <div class="layout-content max-w-prose mx-auto w-full">
+        {{ page.content }}
+      </div>{# /.layout-content #}
+    </main>
+    
+  </div>
 
-  {# {{ page.help }} #}
-
-  <main role="main" class="px-5">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content max-w-prose mx-auto w-full">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-  </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  {{ include('@tresvuits/includes/footer.html.twig') }}
 
 </div>{# /.layout-container #}

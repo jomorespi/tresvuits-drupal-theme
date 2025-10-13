@@ -115,4 +115,4 @@ global-styling:
       css/theme.css: {}
 global-scripts:
   js: 
-    js/scripts.js: {}  
+    js/app.js: {}  
