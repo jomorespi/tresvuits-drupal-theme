@@ -14,17 +14,25 @@
  */
 #}
 {% block content %}
-  {% if site_logo %}
-    <a href="{{ path('<front>') }}" rel="home" class="site-logo">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" />
+
+  {% if site_name or site_slogan %}
+    <a href="{{ path('<front>') }}" rel="home" class="no-underline">
+    <h1 class="site-branding font-heading">
+  {% endif %}
+
+  {% if site_name %}
+    <strong class="site-name block">
+      {{ site_name }} 
+    </strong>
+  {% endif %}
+
+  {% if site_slogan %}
+    <span class="site-slogan text-sm block">{{ site_slogan }}</span>
+  {% endif %}
+
+  {% if site_name or site_slogan %}
+    </h1>
     </a>
   {% endif %}
-  {% if site_name %}
-    <div class="site-name">
-      <a href="{{ path('<front>') }}" rel="home">{{ site_name }}</a>
-    </div>
-  {% endif %}
-  {% if site_slogan %}
-    <div class="site-slogan">{{ site_slogan }}</div>
-  {% endif %}
+
 {% endblock %}

@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/InterVariable.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/InterVariable-Italic.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/LoraVariable.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/LoraVariable-Italic.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
+}

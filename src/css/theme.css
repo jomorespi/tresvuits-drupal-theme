@@ -1,9 +1,50 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 @theme {
     --color-primary: #fefbf4;
     --color-secondary: color-mix(in srgb, var(--color-primary) 100%, black 5%);
+    --color-dark: #1e2939;
     --spacing-prose: 65ch;
     --font-heading: "Inter, sans-serif";
-    --font-body: "Lora, serif";
+    --font-body: "Lora", serif;
+}
+
+@layer base {
+    
+    :root {
+        font-size: 16px;
+    }
+
+    body {
+        color: var(--color-dark);
+        background-color: var(--color-primary);
+        font-family: var(--font-body);
+    }
+
+    ::selection {
+        background-color: var(--color-dark);
+        color: var(--color-primary);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--gh-font-heading, "Lora, serif");
+        font-weight: 400;
+    }
+    
+    p {
+        margin-bottom: theme("spacing.4");
+    }
+    
+    a {
+        text-decoration: underline;
+        text-underline-offset: .2em;
+        transition: theme('transitionDuration.DEFAULT') text-underline-offset theme('transitionTimingFunction.DEFAULT');
+    
+        &:hover {
+            text-underline-offset: .4em;
+            color: var(--color-light);
+        }
+    }
+
 }

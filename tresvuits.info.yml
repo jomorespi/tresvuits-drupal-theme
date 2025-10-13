@@ -3,9 +3,9 @@ type: theme
 'base theme': stable9
 version: 1.0.0
 libraries:
-  - tresvuits/base
-  - tresvuits/messages
-  - core/normalize
+  # - tresvuits/base
+  # - tresvuits/messages
+  # - core/normalize
   - tresvuits/global-styling
   - tresvuits/global-scripts
 libraries-extend:
