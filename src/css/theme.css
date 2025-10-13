@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #fefbf4;
+    --color-secondary: color-mix(in srgb, var(--color-primary) 100%, black 5%);
+    --spacing-prose: 65ch;
+    --font-heading: "Inter, sans-serif";
+    --font-body: "Lora, serif";
+}

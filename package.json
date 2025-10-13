@@ -1,0 +1,26 @@
+{
+  "name": "tresvuits",
+  "description": "Theme per al blog Tres Vuits",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Jordi Moreno",
+    "url": "https://jordimoreno.cat",
+    "email": "hola@jordimoreno.cat"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "concurrently": "^9.2.0",
+    "parcel": "^2.15.4",
+    "tailwindcss": "^4.1.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-style": "npx @tailwindcss/cli -i ./src/css/theme.css -o ./css/theme.css --watch",
+    "watch-script": "npx parcel watch ./src/js/app.js --dist-dir ./js/",
+    "build-style": "npx @tailwindcss/cli -i ./src/css/theme.css -o ./css/theme.css --minify",
+    "build-script": "npx parcel build ./src/js/app.js --dist-dir ./js/",
+    "watch": "concurrently \"npm:watch-style\" \"npm:watch-script\"",
+    "build": "npm run build-style && npm run build-script"
+  }
+}

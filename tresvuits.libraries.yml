@@ -109,3 +109,10 @@ user:
     component:
       css/components/user.css:
         weight: -10
+global-styling:
+  css:
+    theme:
+      css/theme.css: {}
+global-scripts:
+  js: 
+    js/scripts.js: {}  
