@@ -17,11 +17,11 @@
 
   {% if site_name or site_slogan %}
     <a href="{{ path('<front>') }}" rel="home" class="no-underline">
-    <h1 class="site-branding font-heading">
+    <h1 class="site-branding font-heading font-normal">
   {% endif %}
 
   {% if site_name %}
-    <strong class="site-name block">
+    <strong class="site-name block font-semibold">
       {{ site_name }} 
     </strong>
   {% endif %}

@@ -29,7 +29,7 @@
 
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--gh-font-heading, "Lora, serif");
-        font-weight: 400;
+        font-weight: theme('fontWeight.semibold');
     }
     
     p {
@@ -47,4 +47,67 @@
         }
     }
 
+}
+
+@layer components {
+    .tv-button {
+        display: inline-block;
+        font-family: var(--gh-font-heading, "Inter, sans-serif");
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: theme('fontSize.xs');
+        letter-spacing: .5px;
+        padding: .2rem .5rem;
+        border-radius: .3rem;
+        background-color: theme('colors.gray.800');
+        color: var(--color-light);
+    }
+
+    .tv-main-nav {
+        margin-top: var(--tv-main-nav-height, 0);
+    }
+
+    .tv-pagination-arrow {
+        text-decoration: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid theme('colors.gray.800');
+        min-width: 28px;
+        height: 28px;
+        border-radius: 16px;
+        transition-property: background-color, color;
+        transition-duration: theme('transitionDuration.DEFAULT');
+        transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+        
+        &:hover,
+        &:focus {
+            color: var(--color-primary);
+            background-color: theme('colors.gray.800');
+        }
+    }
+
+    .footer-menu {
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li {
+                &:not(:last-child) {
+                    &::after {
+                        content: '\00B7';
+                        display: inline-block;
+                        
+                        margin: 0 .5em;
+                    }
+                }
+            }
+        }
+    }
+
+    #tv-viewport {
+        min-height: calc(100svh - var(--tv-footer-height));
+        transition: min-height theme('transitionDuration.DEFAULT') theme('transitionTimingFunction.DEFAULT');
+    }
 }
