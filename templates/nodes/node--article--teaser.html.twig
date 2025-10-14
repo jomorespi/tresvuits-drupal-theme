@@ -1,0 +1,9 @@
+<article class="border-b py-4 flex flex-nowrap justify-between items-center">
+    <a class="block no-underline group font-heading" href="{{ url }}">
+        <span class="post-number text-xs h-6 min-w-6 inline-flex items-center justify-center rounded-full bg-secondary mr-2 transition-colors group-hover:bg-gray-800 group-focus-visible:bg-gray-800 group-hover:text-primary group-focus-visible:text-primary">1</span>
+        <h3 class="inline group-hover:font-semibold group-focus-visible:font-semibold transition-all">{{ label }}</h3>
+    </a>
+    <time{{ author_attributes.addClass('node__submitted text-xs') }}>
+        {{ node.created.value|date("j / n / Y") }}
+    </time>
+</article>

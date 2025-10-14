@@ -88,24 +88,50 @@
         margin-top: var(--tv-main-nav-height, 0);
     }
 
-    .tv-pagination-arrow {
-        text-decoration: none;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid theme('colors.gray.800');
-        min-width: 28px;
-        height: 28px;
-        border-radius: 16px;
-        transition-property: background-color, color;
-        transition-duration: theme('transitionDuration.DEFAULT');
-        transition-timing-function: theme('transitionTimingFunction.DEFAULT');
-        
-        &:hover,
-        &:focus {
-            color: var(--color-primary);
-            background-color: theme('colors.gray.800');
+    .pager {
+        margin-block: 3rem;
+
+        .pager__items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: theme('spacing.1');
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: theme('fontSize.xs');
+            font-family: var(--font-heading);
+
+            .pager__item {
+
+                a {
+                    text-decoration: none;
+                    display: inline-block;
+                    height: 1.5rem;
+                    min-width: 1.5rem;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 100%;
+                    border: 1px solid transparent;
+
+                    &:hover,
+                    &:focus-visible {
+                        border-color: var(--color-dark);
+                    }
+                }
+
+                &.is-active {
+
+                    a {
+                        font-weight: theme('fontWeight.semibold');
+                        background-color: var(--color-secondary);
+                    }
+                }
+
+            }
         }
+
     }
 
     .region-footer {
@@ -130,5 +156,11 @@
     #tv-viewport {
         min-height: calc(100svh - var(--tv-footer-height));
         transition: min-height theme('transitionDuration.DEFAULT') theme('transitionTimingFunction.DEFAULT');
+    }
+}
+
+.path-frontpage {
+    .page__title {
+        text-align: center;
     }
 }
