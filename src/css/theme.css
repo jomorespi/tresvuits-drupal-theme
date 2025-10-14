@@ -50,6 +50,26 @@
 }
 
 @layer components {
+
+    .region {
+
+        &.region-header {
+            width: 100%;
+        }
+    }
+
+    .tv-main-nav__toggle {
+        background-image: url(../images/icons/menu-open.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 1.5rem;
+        height: 1.5rem;
+
+        &.tv-main-nav__toggle--close {
+            background-image: url(../images/icons/menu-close.svg);
+        }
+    }
+
     .tv-button {
         display: inline-block;
         font-family: var(--gh-font-heading, "Inter, sans-serif");
@@ -60,6 +80,7 @@
         padding: .2rem .5rem;
         border-radius: .3rem;
         background-color: theme('colors.gray.800');
+        background-size: contain;
         color: var(--color-light);
     }
 

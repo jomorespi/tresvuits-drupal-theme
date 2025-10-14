@@ -25,6 +25,7 @@ description: ''
 core_version_requirement: ^11
 generator: 'starterkit_theme:11.2.5'
 regions:
+  mainmenu : Main menu
   header: Header
   content: Content
   footer: Footer

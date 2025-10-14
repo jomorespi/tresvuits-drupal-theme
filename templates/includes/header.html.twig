@@ -4,11 +4,18 @@
         <div id="tv-header__main" class="px-5">
             <div class="py-4 flex justify-between items-center gap-5 w-full max-w-prose mx-auto">
                 {{ page.header }}
+
+                <button class="tv-main-nav__toggle cursor-pointer">
+                    <span class="tv-main-nav__toggle__txt sr-only">Mostra el menú principal</span>
+                </button>
+
             </div>
         </div>
 
-        <div class="tv-main-nav__wrapper h-0 overflow-hidden transition-all duration-300 ease-in-out bg-secondary">
-        {{ page.primary_menu }}
+        <div class="tv-main-nav__wrapper h-0 overflow-hidden transition-all duration-300 ease-in-out bg-secondary px-5">
+            <div class="tv-main-nav p-5 gap-5 text-center leading-relaxed text-sm tracking-wide" aria-hidden="true">
+                {{ page.mainmenu }}
+            </div>
         </div>
 
     </div>
