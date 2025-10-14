@@ -108,8 +108,8 @@
         }
     }
 
-    .footer-menu {
-        .nav {
+    .region-footer {
+        .menu {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
