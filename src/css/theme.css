@@ -70,18 +70,22 @@
         }
     }
 
-    .tv-button {
+    input[type="submit"],
+    input[type="button"],
+    a.button,
+    .button--primary {
         display: inline-block;
         font-family: var(--gh-font-heading, "Inter, sans-serif");
         text-decoration: none;
         text-transform: uppercase;
         font-size: theme('fontSize.xs');
         letter-spacing: .5px;
-        padding: .2rem .5rem;
+        padding: .5rem 1rem;
         border-radius: .3rem;
         background-color: theme('colors.gray.800');
         background-size: contain;
-        color: var(--color-light);
+        color: var(--color-primary);
+        cursor: pointer;
     }
 
     .tv-main-nav {
@@ -156,6 +160,47 @@
     #tv-viewport {
         min-height: calc(100svh - var(--tv-footer-height));
         transition: min-height theme('transitionDuration.DEFAULT') theme('transitionTimingFunction.DEFAULT');
+    }
+
+    .messages {
+        background-color: var(--color-secondary);
+        box-shadow: theme('boxShadow.xs');
+        padding: theme('spacing.4');
+        border-radius: theme('borderRadius.md');
+        margin: theme('spacing.4') 0;
+        text-align: center;
+        font-style: italic;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="email"],
+    select {
+        background-color: theme('colors.white');
+        border: 1px solid var(--color-secondary);
+        border-radius: theme('borderRadius.sm');
+        padding: theme('spacing.2') theme('spacing.3');
+    }
+
+    .contact-form {
+        display: grid;
+        gap: theme('spacing.4');
+
+        label {
+            display: block;
+            font-weight: theme('fontWeight.semibold');
+            margin-bottom: theme('spacing.1');
+        }
+
+        .form-actions {
+            margin-top: theme('spacing.2');
+            display: flex;
+            gap: theme('spacing.4');
+            flex-wrap: wrap;
+        }
     }
 }
 
