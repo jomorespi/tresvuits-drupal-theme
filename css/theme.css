@@ -204,9 +204,6 @@
     white-space: nowrap;
     border-width: 0;
   }
-  .absolute {
-    position: absolute;
-  }
   .relative {
     position: relative;
   }
@@ -315,8 +312,8 @@
   .flex-col-reverse {
     flex-direction: column-reverse;
   }
-  .flex-nowrap {
-    flex-wrap: nowrap;
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -326,6 +323,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
@@ -687,6 +687,8 @@
     border: 1px solid var(--color-secondary);
     border-radius: 0.25rem;
     padding: 0.5rem 0.75rem;
+    display: block;
+    width: 100%;
   }
   .contact-form {
     display: grid;

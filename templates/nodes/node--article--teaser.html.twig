@@ -1,4 +1,4 @@
-<article class="border-b py-4 flex flex-nowrap justify-between items-center">
+<article class="border-b py-4 flex flex-wrap gap-4 justify-between items-center">
     <a class="block no-underline group font-heading" href="{{ url }}">
 
         {% if content.field_chapter %}
@@ -15,5 +15,5 @@
     <time{{ author_attributes.addClass('node__submitted text-xs') }}>
         {{ node.created.value|date("j / n / Y") }}
     </time>
-    
+
 </article>

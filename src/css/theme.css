@@ -184,6 +184,8 @@
         border: 1px solid var(--color-secondary);
         border-radius: theme('borderRadius.sm');
         padding: theme('spacing.2') theme('spacing.3');
+        display: block;
+        width: 100%;
     }
 
     .contact-form {
