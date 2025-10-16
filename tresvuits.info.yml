@@ -28,4 +28,5 @@ regions:
   mainmenu : Main menu
   header: Header
   content: Content
+  sidebar: Sidebar
   footer: Footer

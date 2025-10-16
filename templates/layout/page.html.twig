@@ -44,7 +44,7 @@
 #}
 <div class="layout-container">
 
-  <div class="viewport bg-primary pb-12 relative z-10" id="tv-viewport">
+  <div class="viewport bg-primary pb-20 lg:pb-24 relative z-10" id="tv-viewport">
 
     {{ include('@tresvuits/includes/header.html.twig') }}
 
@@ -59,6 +59,8 @@
         {{ page.content }}
       </div>{# /.layout-content #}
     </main>
+
+    {{ include('@tresvuits/includes/sidebar.html.twig') }}
     
   </div>
 
