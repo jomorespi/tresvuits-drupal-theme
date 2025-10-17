@@ -77,16 +77,27 @@
         display: inline-block;
         font-family: var(--gh-font-heading, "Inter, sans-serif");
         text-decoration: none;
-        text-transform: uppercase;
-        font-size: theme('fontSize.xs');
+        text-transform: none;
+        font-size: theme('fontSize.sm');
+        letter-spacing: theme('letterSpacing.wide');
         letter-spacing: .5px;
         padding: .5rem 1rem;
-        border-radius: .3rem;
+        border-radius: theme('borderRadius.sm');
         background-color: theme('colors.gray.800');
         background-size: contain;
         color: var(--color-primary);
         cursor: pointer;
         font-weight: theme('fontWeight.semibold');
+        border: 1px solid var(--color-dark);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--color-dark);
+            background-color: var(--color-primary);
+            border-color: theme('colors.gray.600');
+            outline-offset: 1px;
+            transition: theme('transitionDuration.DEFAULT') background-color, color theme('transitionTimingFunction.DEFAULT');
+        }
     }
 
     .tv-main-nav {
@@ -141,15 +152,22 @@
 
     .region-footer {
         
-        .block-menu:not(:last-child) {
-            margin-bottom: 1rem;
+        font-size: theme('fontSize.sm');
+
+        .block {
+            &:not(:first-child) {
+                margin-top: 2rem;
+            }
+
+            p {
+                margin: 0;
+            }
         }
 
         .menu {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            font-size: theme('fontSize.sm');
 
 
             li {
@@ -245,5 +263,37 @@
         .page__title {
             text-align: center;
         }
+    }
+}
+
+#simplenews-subscriptions-block-nl-form {
+    .description {
+        @apply sr-only;
+    }
+
+    .form-item {
+        margin-bottom: theme('spacing.4');
+    }
+}
+
+.altcha {
+    label {
+        font-weight: theme('fontWeight.normal');
+        font-style: italic;
+
+        &::before {
+            content: "\00AB";
+        }
+        &::after {
+            content: "\00BB";
+        }
+    }
+}
+
+#block-tresvuits-llicencia {
+    img {
+        display: inline-block;
+        margin-inline: .25rem;
+        margin-top: .5rem;
     }
 }
