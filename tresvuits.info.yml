@@ -27,6 +27,7 @@ generator: 'starterkit_theme:11.2.5'
 regions:
   mainmenu : Main menu
   header: Header
-  content: Content
-  sidebar: Sidebar
+  content: Contingut Principal
+  sidebar: Sidebar Articles
+  sidebar_second: Sidebar Pàgines
   footer: Footer

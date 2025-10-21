@@ -1,17 +1,22 @@
-{% if page.sidebar %}
-    <aside class="tv-sidebar px-5 mt-12 lg:mt-20" id="tv-sidebar">
+{% if page.sidebar and node is defined and node.getType() == 'article'  %}
+    <aside class="tv-sidebar px-5 mt-20" id="tv-sidebar">
 
-        {% if node is defined and node.getType() == 'article' %}
-            <div class="mb-20 lg:mb-32">
-                <p class="max-w-prose mx-auto w-full text-center text-gray-700">
-                    <a href="{{ front_page }}" class="button--primary">&nwarr; {{ 'Torna a la portada'|t }}</a>
-                </p>
-            </div>
-        {% endif %}
+        <div class="mb-32">
+            <p class="max-w-prose mx-auto w-full text-center text-gray-700">
+                <a href="{{ front_page }}" class="button--primary">&nwarr; {{ 'Torna a la portada'|t }}</a>
+            </p>
+        </div>
 
         <div class="max-w-68 mx-auto w-full">
             {{ page.sidebar }}
         </div>
 
+    </aside>
+
+{% elseif (node is defined and node.getType() == 'page') or is_front %}
+    <aside class="tv-sidebar px-5 mt-12 lg:mt-20" id="tv-sidebar">
+        <div class="max-w-68 mx-auto w-full">
+            {{ page.sidebar_second }}
+        </div>
     </aside>
 {% endif %}

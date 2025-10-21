@@ -240,6 +240,21 @@
         .form-actions {
             margin-top: theme('spacing.4');
         }
+
+        .js-form-type-checkbox {
+            display: flex;
+            align-items: center;
+            gap: theme('spacing.2');
+        }
+
+        fieldset {
+
+            legend {
+                font-weight: theme('fontWeight.semibold');
+                margin-bottom: theme('spacing.2');
+                font-family: theme(fontFamily.heading);
+            }
+        }
     }
 
 
