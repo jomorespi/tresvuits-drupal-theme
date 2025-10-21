@@ -1,0 +1,82 @@
+<div style="background-color:#fefbf4; padding:20px; 16px; font-family: Arial, sans-serif; font-size: 16px; color: #1e2939; line-height: 1.6; max-width:600px; margin:auto;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width:100%; max-width:600px; margin:auto; border-collapse:collapse;">
+        <tbody>
+            {% if node.bundle == 'article' %}
+            <tr>
+                <td>
+                    <p>
+                        Hola!<br>
+                        Hi ha una nova entrada a <a href='[site:url]' style="color:#1e2939;"><b>[site:name]</b></a>.
+                    </p>
+                </td>
+            </tr>
+            {# <tr>
+                <td>
+                    <a rel="noopener" target="_blank" rel="noopener" target="_blank" rel="noopener" href="[node:url]" style="background-color: #fefbf4; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; text-decoration: none; padding: 8px 16px; color: #364153; border-radius: 5px; border: 1px solid #364153; display: inline-block; mso-padding-alt: 0;">
+                        <!--[if mso]><i style="mso-font-width:100%;mso-text-raise:30pt" hidden>&emsp;</i><span style="mso-text-raise:50%;"><![endif]--><span style="mso-text-raise: 15pt;">Llegir-la al blog</span>
+                        <!--[if mso]></span><i style="mso-font-width:100%;" hidden>&emsp;&#8203;</i><![endif]-->
+                    </a>
+                </td>
+            </tr> #}
+            <tr>
+                <td style="padding:0 0 16px;">
+                    <hr style="border:none; border-top:1px solid #f2efe8; margin:20px 0;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3 style="font-size:20px; margin:0;">
+                        <a href='[node:url]' style="color:#1e2939;text-decoration:none;">[node:title]</a>
+                    </h3>
+                    <p style="font-size:12px; font-sytle:italic; margin:4px 0 0;">
+                        <a href="[node:url]" target="_blank" rel="noopener" style="color:#364153">
+                            &lsqb;&nearr; Llegeix-ho al blog&rsqb;
+                        </a>
+                    </p>
+                </td>
+            </tr>
+            <tr style="font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif; font-size: 16px; line-height: 1.5; color: #1e2939;">
+                <td style="padding:16px 0;">
+                    [node:body]
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; padding-top:30px; padding-bottom:30px;">
+                    <a rel="noopener" target="_blank" rel="noopener" target="_blank" rel="noopener" href="[site:url]" style="background-color: #1e2939; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; text-decoration: none; padding: 8px 16px; color: #ffffff; border-radius: 5px; display: inline-block; mso-padding-alt: 0;">
+                    <!--[if mso]><i style="mso-font-width:100%;mso-text-raise:30pt" hidden>&emsp;</i><span style="mso-text-raise:50%;"><![endif]--><span style="mso-text-raise: 15pt;">Tots els textos</span>
+                    <!--[if mso]></span><i style="mso-font-width:100%;" hidden>&emsp;&#8203;</i><![endif]-->
+                    </a>
+                </td>
+            </tr>
+            {% else %}
+                <tr>
+                    <td>
+                        {{ body }}
+                    </td>
+                </tr>
+            {% endif %}
+            <tr>
+                <td>
+                    <hr style="border:none; border-top:1px solid #f2efe8; margin:20px 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:12px; color:#6b7280; text-align:center; padding-top:10px;">
+                    {% if not opt_out_hidden %}
+                    {% if format == 'html' %}
+                    <p class="footer" style="text-align:center;"><a href="[simplenews-subscriber:unsubscribe-url]" target="_blank" rel="noopener" style="color:#364153">{{ unsubscribe_text }}</a>
+                    </p>
+                    {% else %}
+                    -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
+                    {% endif %}
+                {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
+{% if key == 'test' %}
+    <p style="text-align:center;">- - - {{ test_message }} - - -</p>
+{% endif %}
