@@ -190,6 +190,21 @@
 
     .text-formatted {
         line-height: theme('lineHeight.relaxed');
+
+        p, ul, ol, blockquote {
+            margin-bottom: theme('spacing.4');
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: theme('spacing.2');
+            margin-top: theme('spacing.6');
+
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: theme('spacing.6');
+        }
     }
 
     .messages {
@@ -274,10 +289,8 @@
 }
 
 .path-frontpage {
-    .block-system-main-block {
-        .page__title {
-            text-align: center;
-        }
+    .page-title {
+        text-align: center;
     }
 }
 
