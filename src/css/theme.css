@@ -317,6 +317,10 @@
             content: "\00BB";
         }
     }
+
+    .altcha-footer.svelte-ddsc3z.svelte-ddsc3z {
+        opacity: .9;
+    }
 }
 
 #block-tresvuits-llicencia {
