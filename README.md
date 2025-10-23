@@ -1,2 +1,2 @@
 ## Tres Vuits Drupal Theme
-Theme per al blog [Tresvuits](https://tresvuits.jordimoreno.cat/). Generat a partir de [Starterkit](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme).
+Theme per al blog [Tresvuits](https://tresvuits.jordimoreno.cat/). Generat a partir de [Starterkit](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme). Utilitza [TailwindCSS](https://tailwindcss.com/) i [Parcel](https://parceljs.org/).
