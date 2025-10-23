@@ -273,7 +273,8 @@
     }
 
 
-    .contact-form {
+    .contact-form,
+    .user-login-form {
         display: grid;
         gap: theme('spacing.4');
 
