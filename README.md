@@ -1,1 +1,2 @@
-tresvuits theme, generated from starterkit_theme. Additional information on generating themes can be found in the [Starterkit documentation](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme).
+# Tres Vuits Drupal Theme
+Theme per al blog [Tresvuits](https://tresvuits.jordimoreno.cat/). Generat a partir de [Starterkit](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme).
