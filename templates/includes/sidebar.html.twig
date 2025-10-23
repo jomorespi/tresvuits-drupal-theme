@@ -1,22 +1,15 @@
 {% if page.sidebar and node is defined and node.getType() == 'article'  %}
-    <aside class="tv-sidebar px-5 mt-20" id="tv-sidebar">
 
-        <div class="mb-32">
-            <p class="max-w-prose mx-auto w-full text-center text-gray-700">
-                <a href="{{ front_page }}" class="button--primary">&nwarr; {{ 'Torna a la portada'|t }}</a>
-            </p>
-        </div>
+    <div class="mt-20">
+        <p class="max-w-prose mx-auto w-full text-center text-gray-700">
+            <a href="{{ front_page }}" class="button--primary">&nwarr; {{ 'Torna a la portada'|t }}</a>
+        </p>
+    </div>
 
-        <div class="max-w-68 mx-auto w-full">
-            {{ page.sidebar }}
-        </div>
+    {{ page.sidebar }}
 
-    </aside>
+{% elseif (page.sidebar_second and (node is defined and node.getType() == 'page') or is_front) %}
 
-{% elseif (node is defined and node.getType() == 'page') or is_front %}
-    <aside class="tv-sidebar px-5 mt-24 lg:mt-32" id="tv-sidebar">
-        <div class="max-w-68 mx-auto w-full">
-            {{ page.sidebar_second }}
-        </div>
-    </aside>
+    {{ page.sidebar_second }}
+    
 {% endif %}
