@@ -1,19 +1,22 @@
-<article class="border-b py-4 flex flex-wrap gap-4 justify-between items-center">
-    <a class="block no-underline group font-heading" href="{{ url }}">
+<article>
+    <a class="no-underline group border-b py-4 flex flex-wrap gap-4 justify-between items-center" href="{{ url }}" aria-labelledby="node-title-{{ node.id }}">
 
-        {% if content.field_chapter %}
-        <span 
-            class="post-number text-xs h-6 min-w-6 inline-flex items-center justify-center rounded-full bg-secondary mr-2 transition-colors group-hover:bg-gray-800 group-focus-visible:bg-gray-800 group-hover:text-primary group-focus-visible:text-primary"
-            aria-label="">
-                {{ content.field_chapter }}
-        </span>
-        {% endif %}
-
-        <h3 class="inline group-hover:font-semibold group-focus-visible:font-semibold transition-all">{{ label }}</h3>
+        <div class="flex items-center font-heading">
+            {% if content.field_chapter %}
+            <span
+                class="post-number text-xs h-6 min-w-6 inline-flex items-center justify-center rounded-full bg-secondary mr-2 transition-colors group-hover:bg-gray-800 group-focus-visible:bg-gray-800 group-hover:text-primary group-focus-visible:text-primary"
+                aria-label="">
+                    {{ content.field_chapter }}
+            </span>
+            {% endif %}
+            <h3 id="node-title-{{ node.id }}" class="inline group-hover:font-semibold group-focus-visible:font-semibold transition-all">{{ label }}</h3>
+        </div>
+    
+    
+        <time{{ author_attributes.addClass('node__submitted text-xs') }}>
+            {{ node.created.value|date("j / n / Y") }}
+        </time>
+    
     </a>
-
-    <time{{ author_attributes.addClass('node__submitted text-xs') }}>
-        {{ node.created.value|date("j / n / Y") }}
-    </time>
 
 </article>
