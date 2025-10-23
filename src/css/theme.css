@@ -8,6 +8,7 @@
     --spacing-prose: 65ch;
     --font-heading: "Inter, sans-serif";
     --font-body: "Lora", serif;
+    --leading-xrelaxed: 1.875;
 }
 
 @layer base {

@@ -37,7 +37,7 @@
     {% for item in items %}
       {%
         set classes = [
-          'menu-item',
+          'menu-item leading-xrelaxed lg:leading-relaxed',
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
