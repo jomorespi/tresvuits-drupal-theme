@@ -208,16 +208,6 @@
         }
     }
 
-    .messages {
-        background-color: var(--color-secondary);
-        box-shadow: theme('boxShadow.xs');
-        padding: theme('spacing.4');
-        border-radius: theme('borderRadius.md');
-        margin: theme('spacing.4') 0;
-        text-align: center;
-        font-style: italic;
-    }
-
     textarea,
     input[type="text"],
     input[type="email"],

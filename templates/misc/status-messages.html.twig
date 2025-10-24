@@ -19,34 +19,54 @@
  *   - class: HTML classes.
  */
 #}
-<div data-drupal-messages>
+<div class="fixed z-50 w-full h-full inset-0 bg-gray-900/50" tabindex="-1" role="dialog" data-drupal-messages>
 {% block messages %}
 {% for type, messages in message_list %}
   {%
     set classes = [
       'messages',
       'messages--' ~ type,
+      'w-full',
+      'max-w-prose',
+      'relative',
+      'bg-primary',
+      'shadow-lg',
+      'rounded-md',
+      'text-gray-900',
+      'p-6',
+      'text-center',
+      'italic'
     ]
   %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
-      <div role="alert">
-    {% endif %}
-      {% if status_headings[type] %}
-        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-      {% endif %}
-      {% if messages|length > 1 %}
-        <ul class="messages__list">
-          {% for message in messages %}
-            <li class="messages__item">{{ message }}</li>
-          {% endfor %}
-        </ul>
+  <div class="flex w-full h-full items-center justify-center px-4 pt-4 pb-[15%]" role="document">
+    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+      {% if type == 'error' %}
+        <div role="alert">
       {% else %}
-        {{ messages|first }}
       {% endif %}
-    {% if type == 'error' %}
-      </div>
-    {% endif %}
+        {# {% if status_headings[type] %}
+          <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        {% endif %} #}
+        {% if messages|length > 1 %}
+          <ul class="messages__list">
+            {% for message in messages %}
+              <li class="messages__item">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {{ messages|first }}
+        {% endif %}
+      {% if type == 'error' %}
+        </div>
+      {% endif %}
+
+      <button class="dialog__close absolute top-1.5 right-1.5 focus:outline-none" type="button" aria-label="{{ 'Tanca la finestra'|t }}">
+        <div class="flex items-center justify-center w-6 h-6 p-0.5 rounded-full">
+          <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </div>
+      </button>
+
+    </div>
   </div>
   {# Remove type specific classes. #}
   {% set attributes = attributes.removeClass(classes) %}

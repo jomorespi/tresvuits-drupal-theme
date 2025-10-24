@@ -53,4 +53,29 @@ window.addEventListener('DOMContentLoaded', function() {
             viewport.style.setProperty('--tv-footer-height', footerHeight + 'px');
         }
 
+
+    // Status Messages Close Button
+    
+    const statusMessages = document.querySelectorAll('[data-drupal-messages]');
+    statusMessages.forEach( message => {
+
+        const closeBtn = message.querySelector('button'),
+            content = message.querySelector('[role="contentinfo"]');
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                message.classList.add('hidden');
+            });
+        }
+
+        // Close when clicking outside the content box
+
+        message.addEventListener('click', function(e) {
+            if (!content.contains(e.target)) {
+                message.classList.add('hidden');
+            }
+        });
+    });
+
 });
