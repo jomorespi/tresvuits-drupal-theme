@@ -76,6 +76,15 @@ window.addEventListener('DOMContentLoaded', function() {
                 message.classList.add('hidden');
             }
         });
+
+        // Close with Escape key
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !message.classList.contains('hidden')) {
+                message.classList.add('hidden');
+            }
+        });
+
     });
 
 });
