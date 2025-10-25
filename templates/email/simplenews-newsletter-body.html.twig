@@ -15,7 +15,7 @@
                       <td align="left" style="font-size:0;padding:10px 25px 0;word-break:break-word">
                         <div
                           style="color:#1e2939;font-family:Inter,Helvetica,Arial,system-ui,sans-serif;font-size:16px;line-height:24px;text-align:left">
-                          <strong><a href="[site:url]" target="_blank">[site:name]</a></strong>
+                          <strong><a style="color:#1e2939;" href="[site:url]" target="_blank">[site:name]</a></strong>
                         </div>
                       </td>
                     </tr>
@@ -58,7 +58,7 @@
                                 <div
                                   style="color:#1e2939;font-family:Lora,Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;font-size:16px;line-height:24px;text-align:left">
                                   Hola! He publicat una nova entrada. Aquí te la deixo, per si et ve de gust dedicar-li
-                                  uns minuts. També la pots llegir al blog <a href="[node:url]" target="_blank">clicant aquí</a>.
+                                  uns minuts. També la pots llegir al blog <a style="color:#1e2939;" href="[node:url]" target="_blank">clicant aquí</a>.
                                 </div>
                               </td>
                             </tr>
@@ -92,7 +92,7 @@
                       <td align="left" style="font-size:0;padding:10px 25px 7px;word-break:break-word">
                         <div
                           style="color:#1e2939;font-family:Inter,Helvetica,Arial,system-ui,sans-serif;font-size:18px;font-weight:700;line-height:24px;text-align:left">
-                          <a href="[node:url]" target="_blank">[node:title]</a></div>
+                          <a style="color:#1e2939;" href="[node:url]" target="_blank">[node:title]</a></div>
                       </td>
                     </tr>
                     {% if node.bundle == 'article' %}
@@ -167,9 +167,9 @@
                               <td align="center" style="font-size:0;padding:10px 25px;word-break:break-word">
                                 <div
                                   style="color:#1e2939;font-family:Lora,Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;font-size:16px;line-height:24px;text-align:center">
-                                  Gràcies per seguir <a href="[site:url]" target="_blank">[site:name]</a>. En aquest dietari hi escric al voltant de la meva relació amb la
+                                  Gràcies per seguir <a style="color:#1e2939;" href="[site:url]" target="_blank">[site:name]</a>. En aquest dietari hi escric al voltant de la meva relació amb la
                                   hipoacúsia bilateral que m'ha acompanyat des de l'adolescència. Si tens cap
-                                  suggeriment o comentari, no dubtis a escriure'm a <a
+                                  suggeriment o comentari, no dubtis a escriure'm a <a style="color:#1e2939;"
                                     href="mailto:[site:mail]">[site:mail]</a>.</div>
                               </td>
                             </tr>
@@ -207,14 +207,27 @@
                                 <div
                                   style="color:#1e2939;font-family:Inter,Helvetica,Arial,system-ui,sans-serif;font-size:12px;line-height:24px;text-align:center">
 
-                                    {% if not opt_out_hidden %}
-                                        {% if format == 'html' %}
-                                            &lsqb;<a href="[simplenews-subscriber:unsubscribe-url]" target="_blank" rel="noopener" style="color:#364153;font-weight:400;">{{ unsubscribe_text }}</a>&rsqb;
+                                    {% if format == 'html' %}
+                                        {% if reason or unsubscribe_text %}
+                                            <p class="newsletter-footer">
+                                            {{ reason }}
+                                            {% if unsubscribe_text %}
+                                                &lsqb;<a style="color:#1e2939;" href="[simplenews-subscriber:unsubscribe-url]" target="_blank" rel="noopener" style="color:#364153;font-weight:400;">{{ unsubscribe_text }}</a>&rsqb;
+                                            {% endif %}
+                                            </p>
+                                        {% endif %}
+                                        {% if test_message %}
+                                            <p class="simplenews-test-message">{{ test_message }}</p>
+                                        {% endif %}
                                         {% else %}
+                                        {{ reason }}
+                                        {% if unsubscribe_text %}
                                             -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
                                         {% endif %}
+                                        {% if test_message %}
+                                            - - - {{ test_message }} - - -
+                                        {% endif %}
                                     {% endif %}
-
                                   
                                   </div>
                               </td>
