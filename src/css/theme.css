@@ -63,8 +63,8 @@
         background-image: url(../images/icons/menu-open.svg);
         background-repeat: no-repeat;
         background-position: center;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.75rem;
+        height: 1.75rem;
 
         &.tv-main-nav__toggle--close {
             background-image: url(../images/icons/menu-close.svg);
