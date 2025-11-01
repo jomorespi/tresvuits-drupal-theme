@@ -6,8 +6,8 @@
     --color-secondary: color-mix(in srgb, var(--color-primary) 100%, black 5%);
     --color-dark: #1e2939;
     --spacing-prose: 65ch;
-    --font-heading: "Inter, sans-serif";
-    --font-body: "Lora", serif;
+    --font-heading: Inter, sans-serif;
+    --font-body: Lora, serif;
     --leading-xrelaxed: 1.875;
 }
 
@@ -29,7 +29,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: var(--gh-font-heading, "Lora, serif");
+        font-family: var(--font-heading, "Inter, sans-serif");
         font-weight: theme('fontWeight.semibold');
     }
     
@@ -76,7 +76,7 @@
     a.button,
     .button--primary {
         display: inline-block;
-        font-family: var(--gh-font-heading, "Inter, sans-serif");
+        font-family: var(--font-heading, "Inter, sans-serif");
         text-decoration: none;
         text-transform: none;
         font-size: theme('fontSize.sm');
