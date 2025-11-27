@@ -3,25 +3,9 @@ type: theme
 'base theme': stable9
 version: 1.0.0
 libraries:
-  # - tresvuits/base
-  # - tresvuits/messages
-  # - core/normalize
   - tresvuits/global-styling
   - tresvuits/global-scripts
-libraries-extend:
-  user/drupal.user:
-    - tresvuits/user
-  core/drupal.dropbutton:
-    - tresvuits/dropbutton
-  core/drupal.dialog:
-    - tresvuits/dialog
-  file/drupal.file:
-    - tresvuits/file
-  core/drupal.progress:
-    - tresvuits/progress
-  core/drupal.tablesort:
-    - tresvuits/drupal.tablesort
-description: ''
+description: 'Theme per al blog/newsleter Tres Vuits'
 core_version_requirement: ^11
 generator: 'starterkit_theme:11.2.5'
 regions:
