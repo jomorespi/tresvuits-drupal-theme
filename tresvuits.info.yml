@@ -3,8 +3,7 @@ type: theme
 'base theme': stable9
 version: 1.0.0
 libraries:
-  - tresvuits/global-styling
-  - tresvuits/global-scripts
+  - tresvuits/base
 description: 'Theme per al blog/newsleter Tres Vuits'
 core_version_requirement: ^11
 generator: 'starterkit_theme:11.2.5'
