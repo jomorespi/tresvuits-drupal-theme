@@ -11,12 +11,6 @@
     --leading-xrelaxed: 1.875;
 }
 
-html.scheme-dark {
-    --color-primary: #353432;
-    --color-secondary: color-mix(in srgb, var(--color-primary) 100%, black 10%);
-    --color-dark: #fefbf4;
-}
-
 @layer base {
     
     :root {
@@ -69,7 +63,7 @@ html.scheme-dark {
         background-image: url(../images/icons/menu-open.svg);
         background-repeat: no-repeat;
         background-position: center;
-        min-width: 1.75rem;
+        width: 1.75rem;
         height: 1.75rem;
 
         &.tv-main-nav__toggle--close {
@@ -109,31 +103,6 @@ html.scheme-dark {
 
     .tv-main-nav {
         margin-top: var(--tv-main-nav-height, 0);
-    }
-
-    .theme-selector {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        color: inherit;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-        width: 1.75rem;
-        height: 1.75rem;
-
-        .sun {
-            display: none;
-        }
-
-        &:is(html.scheme-dark .theme-selector) {
-            .sun {
-                display: inline;
-            }
-            .moon {
-                display: none;
-            }
-        }
     }
 
     .pager {
