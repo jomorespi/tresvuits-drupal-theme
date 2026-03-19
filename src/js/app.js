@@ -17,22 +17,16 @@ window.addEventListener('DOMContentLoaded', function() {
                 mainNavWrapper.classList.remove('h-0');
                 mainNavWrapper.style.height = `${mainNavHeight}px`;
                 mainNav.setAttribute('aria-hidden', 'false');
+                mainNav.removeAttribute('inert');
                 menuBtnTxt.textContent = 'Tanca el menú principal';
                 this.classList.add('tv-main-nav__toggle--close');
-
-                mainNavLinks.forEach( link => {
-                    link.setAttribute('tabindex', '0');
-                } );
 
             } else {
                 mainNavWrapper.style.height = '0';
                 mainNav.setAttribute('aria-hidden', 'true');
+                mainNav.setAttribute('inert', 'true');
                 menuBtnTxt.textContent = 'Mostra el menú principal';
                 this.classList.remove('tv-main-nav__toggle--close');
-
-                mainNavLinks.forEach( link => {
-                    link.setAttribute('tabindex', '-1');
-                } );
 
                 setTimeout(() => {
                     mainNavWrapper.classList.add('h-0');
