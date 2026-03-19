@@ -53,13 +53,6 @@
 
 @layer components {
 
-    .region {
-
-        &.region-header {
-            width: 100%;
-        }
-    }
-
     .tv-main-nav__toggle {
         background-image: url(../images/icons/menu-open.svg);
         background-repeat: no-repeat;
