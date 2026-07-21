@@ -1,14 +1,14 @@
 name: tresvuits
 type: theme
-'base theme': stable9
+'base theme': false
 version: 1.0.0
 libraries:
-  - tresvuits/base
+- tresvuits/base
 description: 'Theme per al blog/newsleter Tres Vuits'
 core_version_requirement: ^11
 generator: 'starterkit_theme:11.2.5'
 regions:
-  mainmenu : Main menu
+  mainmenu: Main menu
   header: Header
   content: Contingut Principal
   sidebar: Sidebar Articles
