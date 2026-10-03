@@ -1,7 +1,7 @@
 name: tresvuits
 type: theme
 'base theme': false
-version: 1.0.1
+version: 1.2.0
 libraries:
 - tresvuits/base
 description: 'Theme per al blog/newsleter Tres Vuits'
