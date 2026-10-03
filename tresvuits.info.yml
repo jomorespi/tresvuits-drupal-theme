@@ -14,3 +14,8 @@ regions:
   sidebar: Sidebar Articles
   sidebar_second: Sidebar Pàgines
   footer: Footer
+libraries-override:
+  system/base:
+    css:
+      component:
+        css/components/hidden.module.css: false

@@ -5,9 +5,15 @@
             <div class="py-4 flex justify-between items-center gap-5 w-full">
                 {{ page.header }}
 
-                <button class="tv-main-nav__toggle cursor-pointer">
-                    <span class="tv-main-nav__toggle__txt sr-only">Mostra el menú principal</span>
-                </button>
+                <div class="flex items-center gap-6">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="{{ 'Commuta el tema clar/fosc'|t }}">
+                        <span class="theme-toggle__dark w-6 h-6 block dark:hidden"></span>
+                        <span class="theme-toggle__light w-6 h-6 hidden dark:block"></span>
+                    </button>
+                    <button class="tv-main-nav__toggle cursor-pointer">
+                        <span class="tv-main-nav__toggle__txt sr-only">{{ 'Mostra el menú principal'|t }}</span>
+                    </button>
+                </div>
 
             </div>
         </div>

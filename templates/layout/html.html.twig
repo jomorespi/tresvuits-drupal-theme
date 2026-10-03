@@ -38,6 +38,18 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+
+    {# Dark Mode: Prevent FOUC #}
+    <script>
+      (function() {
+          var saved = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (saved === 'dark' || (!saved && prefersDark)) {
+              document.documentElement.classList.add('dark');
+          }
+      })();
+    </script>
+
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#

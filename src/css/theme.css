@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./fonts.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --color-primary: #fefbf4;
     --color-secondary: color-mix(in srgb, var(--color-primary) 100%, black 5%);
@@ -9,6 +11,11 @@
     --font-heading: Inter, sans-serif;
     --font-body: Lora, serif;
     --leading-xrelaxed: 1.875;
+}
+
+.dark {
+    --color-primary: #1e2939;
+    --color-dark: #e5e7eb;
 }
 
 @layer base {
@@ -24,20 +31,25 @@
         color: var(--color-primary);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: var(--font-heading, "Inter, sans-serif");
         font-weight: theme('fontWeight.semibold');
     }
-    
+
     p {
         margin-bottom: theme("spacing.4");
     }
-    
+
     a {
         text-decoration: underline;
         text-underline-offset: .2em;
         transition: theme('transitionDuration.DEFAULT') text-underline-offset theme('transitionTimingFunction.DEFAULT');
-    
+
         &:hover {
             text-underline-offset: .4em;
             color: var(--color-light);
@@ -141,7 +153,7 @@
     }
 
     .region-footer {
-        
+
         font-size: theme('fontSize.sm');
 
         .block {
@@ -165,7 +177,7 @@
                     &::after {
                         content: '\00B7';
                         display: inline-block;
-                        
+
                         margin: 0 .5em;
                     }
                 }
@@ -181,11 +193,19 @@
     .text-formatted {
         line-height: theme('lineHeight.relaxed');
 
-        p, ul, ol, blockquote {
+        p,
+        ul,
+        ol,
+        blockquote {
             margin-bottom: theme('spacing.4');
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             margin-bottom: theme('spacing.2');
             margin-top: theme('spacing.6');
 
@@ -219,7 +239,7 @@
             display: block;
             font-weight: theme('fontWeight.semibold');
             margin-bottom: theme('spacing.1');
-    
+
             &.form-required::after {
                 content: "\002A";
                 color: theme('colors.red.900');
@@ -247,7 +267,7 @@
             legend {
                 font-weight: theme('fontWeight.semibold');
                 margin-bottom: theme('spacing.2');
-                font-family: theme(fontFamily.heading);
+                font-family: theme('fontFamily.heading');
             }
         }
     }
@@ -293,6 +313,7 @@
         &::before {
             content: "\00AB";
         }
+
         &::after {
             content: "\00BB";
         }
@@ -309,4 +330,12 @@
         margin-inline: .25rem;
         margin-top: .5rem;
     }
+}
+
+.theme-toggle__light {
+    background-image: url(../images/icons/theme-light.svg);
+}
+
+.theme-toggle__dark {
+    background-image: url(../images/icons/theme-dark.svg);
 }

@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@tailwindcss/cli':
-        specifier: ^4.1.11
+        specifier: ^4.3.3
         version: 4.3.3
       concurrently:
-        specifier: ^9.2.0
+        specifier: ^9.2.4
         version: 9.2.4
       parcel:
-        specifier: ^2.15.4
+        specifier: ^2.16.4
         version: 2.16.4(@swc/helpers@0.5.23)
       tailwindcss:
-        specifier: ^4.1.11
+        specifier: ^4.3.3
         version: 4.3.3
 
 packages:
