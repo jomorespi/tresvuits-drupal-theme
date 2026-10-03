@@ -12,10 +12,6 @@
 }
 
 @layer base {
-    
-    :root {
-        color-scheme: only light;
-    }
 
     body {
         color: var(--color-dark);
