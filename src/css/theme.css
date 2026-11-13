@@ -13,12 +13,14 @@
     --leading-xrelaxed: 1.875;
 }
 
-.dark {
-    --color-primary: #1e2939;
-    --color-dark: #e5e7eb;
-}
 
 @layer base {
+    
+    html.dark {
+        --color-primary: #1e2939;
+        --color-secondary: color-mix(in srgb, var(--color-primary) 100%, white 5%);
+        --color-dark: #e5e7eb;
+    }
 
     body {
         color: var(--color-dark);
@@ -287,59 +289,67 @@
         }
     }
 
-}
+    .path-frontpage {
+        .page-title {
+            text-align: center;
+        }
+    }
+    
+    :is(#simplenews-subscriptions-block-nl-form, #simplenews-subscriptions-block-nl-form-page) {
+        .description {
+            @apply sr-only;
+        }
+    
+        .form-item {
+            margin-bottom: theme('spacing.4');
+        }
+    }
+    
+    .altcha {
+        label {
+            font-weight: theme('fontWeight.normal');
+            font-style: italic;
+    
+            &::before {
+                content: "\00AB";
+            }
+    
+            &::after {
+                content: "\00BB";
+            }
+        }
+    
+        .altcha-footer.svelte-ddsc3z.svelte-ddsc3z {
+            opacity: .9;
+        }
+    }
+    
+    #block-tresvuits-llicencia {
+        img {
+            display: inline-block;
+            margin-inline: .25rem;
+            margin-top: .5rem;
+        }
+    }
+    
+    .theme-toggle__light {
+        background-image: url(../images/icons/theme-light.svg);
+    }
+    
+    .theme-toggle__dark {
+        background-image: url(../images/icons/theme-dark.svg);
+    }
 
-.visually-hidden {
-    @apply sr-only;
-}
-
-.path-frontpage {
-    .page-title {
-        text-align: center;
+    html.dark {
+        .tv-main-nav__toggle {
+            filter: brightness(0) invert(1);
+        }
     }
 }
 
-:is(#simplenews-subscriptions-block-nl-form, #simplenews-subscriptions-block-nl-form-page) {
-    .description {
+@layer utilities {
+    .visually-hidden {
         @apply sr-only;
     }
-
-    .form-item {
-        margin-bottom: theme('spacing.4');
-    }
 }
 
-.altcha {
-    label {
-        font-weight: theme('fontWeight.normal');
-        font-style: italic;
-
-        &::before {
-            content: "\00AB";
-        }
-
-        &::after {
-            content: "\00BB";
-        }
-    }
-
-    .altcha-footer.svelte-ddsc3z.svelte-ddsc3z {
-        opacity: .9;
-    }
-}
-
-#block-tresvuits-llicencia {
-    img {
-        display: inline-block;
-        margin-inline: .25rem;
-        margin-top: .5rem;
-    }
-}
-
-.theme-toggle__light {
-    background-image: url(../images/icons/theme-light.svg);
-}
-
-.theme-toggle__dark {
-    background-image: url(../images/icons/theme-dark.svg);
-}
