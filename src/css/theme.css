@@ -274,6 +274,10 @@
 
 }
 
+.visually-hidden {
+    @apply sr-only;
+}
+
 .path-frontpage {
     .page-title {
         text-align: center;
